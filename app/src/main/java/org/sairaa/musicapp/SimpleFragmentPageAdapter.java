@@ -15,7 +15,11 @@ class SimpleFragmentPageAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-        return new SongFragment();
+        if(position == 0){
+            return new SongFragment();
+        }else
+            return new ArtistFragment();
+
     }
 
     @Override

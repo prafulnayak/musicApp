@@ -28,15 +28,26 @@ class musicAdapter extends ArrayAdapter<Music>{
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.music_view, parent, false);
         }
+
         Music currentSong = getItem(position);
-        ImageView songImage = listItemView.findViewById(R.id.pic);
-        songImage.setBackgroundResource(currentSong.getMusicResource());
-        ImageView playIcon =  listItemView.findViewById(R.id.play_icon);
-        playIcon.setBackgroundResource(currentSong.getPlayImageResourceId());
-        TextView titleView = listItemView.findViewById(R.id.title_song);
-        titleView.setText(currentSong.getSongName());
-        TextView artistNmae = listItemView.findViewById(R.id.artist);
-        artistNmae.setText(currentSong.getArtist());
+        if(currentSong.hasArtistFragment()){
+            ImageView songImage = listItemView.findViewById(R.id.pic);
+            songImage.setBackgroundResource(currentSong.getMusicResource());
+            ImageView playIcon =  listItemView.findViewById(R.id.play_icon);
+            playIcon.setBackgroundResource(currentSong.getPlayImageResourceId());
+            TextView titleView = listItemView.findViewById(R.id.title_song);
+            titleView.setText(currentSong.getSongName());
+            TextView artistNmae = listItemView.findViewById(R.id.artist);
+            artistNmae.setText(currentSong.getArtist());
+        }else{
+            ImageView songImage = listItemView.findViewById(R.id.pic);
+            songImage.setBackgroundResource(currentSong.getMusicResource());
+            TextView titleView = listItemView.findViewById(R.id.title_song);
+            titleView.setVisibility(View.INVISIBLE);
+            TextView artistNmae = listItemView.findViewById(R.id.artist);
+            artistNmae.setText(currentSong.getArtist());
+        }
+
         return listItemView;
     }
 }

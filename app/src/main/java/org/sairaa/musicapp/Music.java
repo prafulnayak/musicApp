@@ -11,12 +11,11 @@ public class Music {
     private static final int NOIMAGEID = -1;
 
     //Image Id
-    private int imageId = NOIMAGEID;
+    private int artistFragment = NOIMAGEID;
 
-    public Music(String mAlbum, String mSongName, String mArtist){
-        album = mAlbum;
-        songName = mSongName;
+    public Music(String mArtist,int mPlaySongId){
         artist = mArtist;
+        playSongImageId = mPlaySongId;
     }
 
     public Music(String mAlbum, String mSongName, String mArtist, int mPlayImageId, int mPlaySongId){
@@ -25,6 +24,7 @@ public class Music {
         artist = mArtist;
         playImageId = mPlayImageId;
         playSongImageId = mPlaySongId;
+        artistFragment = mPlayImageId;
     }
 
     public String getAlbum() {
@@ -39,16 +39,16 @@ public class Music {
         return artist;
     }
 
-    public int getImageIdResourceId() {
-        return imageId;
+    public int getArtistFragment() {
+        return artistFragment;
     }
     public int getPlayImageResourceId(){
         return playImageId;
     }
-    public boolean hasImageResource(){
+    public boolean hasArtistFragment(){
 
-        // It Returns 'TRUE' if image is passed to the constructor or else returns 'FALSE'
-        return (imageId != NOIMAGEID);
+        // It Returns 'TRUE' if artist fragment clicked  to the constructor or else returns 'FALSE'
+        return (artistFragment != NOIMAGEID);
     }
     /*
      * This method returns image Resource ID of the Audio File/Sound

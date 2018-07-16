@@ -2,37 +2,37 @@
     <string name="app_name">MusicApp</string>
     <string name="soorma">Soorma</string>
     <string name="soorma_song1">Good Mad Di Laaltain</string>
-    <string name="soorma_song1_artist">Sukhwinder Singh</string>
+    <string name="sukhwinder">Sukhwinder Singh</string>
     <string name="soorma_song2">Soorma Anthem</string>
-    <string name="soorma_song2_artist">Shankar Mahadevan</string>
+    <string name="shankarMahadevan">Shankar Mahadevan</string>
 
     <string name="race3">Race 3</string>
     <string name="race3_song1">Heeriya</string>
-    <string name="race3_song1_artist">Meet Bros</string>
+    <string name="meet_bros">Meet Bros</string>
     <string name="race3_song2">Party Chale On</string>
-    <string name="race3_song2_artist">Mika Singh</string>
+    <string name="mika">Mika Singh</string>
     <string name="race3_song3">Selfish</string>
-    <string name="race3_song3_artist">Atif Aslam</string>
+    <string name="atif_aslam">Atif Aslam</string>
 
     <string name="baaghi2">Baaghi 2</string>
     <string name="baaghi2_song1">O Saathi</string>
-    <string name="baaghi2_song1_artist">Atif Aslam</string>
+
 
     <string name="rustom">Rustom</string>
     <string name="rustom_song1">Tere Sang Yaara</string>
-    <string name="rustom_song1_artist">Atif Aslam</string>
+
 
     <string name="sonu_ke">Sonu Ke Titu Ki Sweety</string>
     <string name="sonu_ke_song1">Chhote Chhote Peg</string>
-    <string name="sonu_ke_song1_artist">Yo Yo Honey Singh</string>
+    <string name="yoyo">Yo Yo Honey Singh</string>
     <string name="sonu_ke_song2">Subah Subah</string>
-    <string name="sonu_ke_song2_artist">Arjit Singh</string>
+    <string name="arjit">Arjit Singh</string>
 
     <string name="padman">Padman</string>
     <string name="padman_song1">Aaj Se Teri</string>
-    <string name="padman_song1_artist">Arjit Singh</string>
+
 
     <string name="razzi">Razzi</string>
     <string name="razzi_song1">Ae Watan</string>
-    <string name="razzi_song1_artist">Arjit Singh</string>
+
 </resources>
