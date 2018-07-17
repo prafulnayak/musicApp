@@ -1,17 +1,23 @@
 package org.sairaa.musicapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
 public class ArtistFragment extends Fragment {
+
 
     public ArtistFragment(){
 
@@ -41,8 +47,22 @@ public class ArtistFragment extends Fragment {
         musicAdapter mAdapter = new musicAdapter(getActivity(),songsToDisplay);
         GridView gridView = rootView.findViewById(R.id.gridview_song);
         gridView.setAdapter(mAdapter);
+        final ArrayList<Music> songsToPass = new ArrayList<Music>();
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Music sMusic = songsToDisplay.get(position);
+
+                Intent intent = new Intent(getActivity(),ArtistDetails.class);
+                intent.putExtra("artist",sMusic.getArtist());
+                
+                getActivity().startActivity(intent);
+            }
+        });
 
         return rootView;
+
+
     }
 }
 
