@@ -30,21 +30,11 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         slidingPanel = findViewById(R.id.sliding_layout);
-//        slidingPanel.setVisibility(View.INVISIBLE);
-//        slidingPanel.setPanelHeight(50);
-//        slidingPanel.setEnabled(false);
-        slidingPanel.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
-            @Override
-            public void onPanelSlide(View panel, float slideOffset) {
+        // hide the slide for the first time the activity get launched
+        slidingPanel.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
 
-            }
 
-            @Override
-            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
-
-            }
-        });
     }
-//    setPanalHeight()
+
 
 }

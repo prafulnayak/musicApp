@@ -34,5 +34,8 @@
 
     <string name="razzi">Razzi</string>
     <string name="razzi_song1">Ae Watan</string>
+    <string name="song">Songs</string>
+    <string name="artist">Artist</string>
+    <string name="artist11">artist</string>
 
 </resources>

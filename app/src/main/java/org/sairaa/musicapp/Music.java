@@ -7,7 +7,7 @@ public class Music {
     private String artist;
     private int playImageId;
     private  int playSongImageId;
-    // a CONSTANT to check image id is passed or not
+    // a CONSTANT to check play image id is passed or not
     private static final int NOIMAGEID = -1;
 
     //Image Id
@@ -51,7 +51,7 @@ public class Music {
         return (artistFragment != NOIMAGEID);
     }
     /*
-     * This method returns image Resource ID of the Audio File/Sound
+     * This method returns image Resource ID
      */
     public int getMusicResource(){
         return playSongImageId;

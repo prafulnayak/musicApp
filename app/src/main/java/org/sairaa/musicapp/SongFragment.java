@@ -12,12 +12,15 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
+
 import java.util.ArrayList;
 
 public class SongFragment extends Fragment {
 
     private TextView textSlide;
     private ImageView imageSlide, playImage, pauseImage;
+    SlidingUpPanelLayout slidingPanel;
 
     public SongFragment(){
 
@@ -28,7 +31,7 @@ public class SongFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.song_activity, container, false);
         final ArrayList<Music> songsToDisplay = new ArrayList<Music>();
-        textSlide = (TextView)getActivity().findViewById(R.id.text_slide);
+        textSlide = getActivity().findViewById(R.id.text_slide);
         imageSlide = getActivity().findViewById(R.id.image_slide);
         playImage = getActivity().findViewById(R.id.play_image);
         pauseImage = getActivity().findViewById(R.id.pause_image);
@@ -44,15 +47,11 @@ public class SongFragment extends Fragment {
         songsToDisplay.add(new Music(getString(R.string.padman),getString(R.string.padman_song1),getString(R.string.arjit),R.drawable.play_circle,R.drawable.padman));
         songsToDisplay.add(new Music(getString(R.string.razzi),getString(R.string.razzi_song1),getString(R.string.arjit),R.drawable.play_circle,R.drawable.raazi));
 
-//        songsToDisplay.add(new Music("Sairat","hello hi45","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello h457i","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello h14i","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello hi4","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello hi","Ena"));
-
         musicAdapter mAdapter = new musicAdapter(getActivity(),songsToDisplay);
         GridView gridView = rootView.findViewById(R.id.gridview_song);
         gridView.setAdapter(mAdapter);
+        //sliding panel
+        slidingPanel = getActivity().findViewById(R.id.sliding_layout);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -62,6 +61,9 @@ public class SongFragment extends Fragment {
                 textSlide.setText(sMusic.getSongName());
                 playImage.setVisibility(View.INVISIBLE);
                 pauseImage.setVisibility(View.VISIBLE);
+                //On touch to any songs anchor the sliding panel
+//                slidingPanel.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+                slidingPanel.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
 

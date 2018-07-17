@@ -29,8 +29,8 @@ class SimpleFragmentPageAdapter extends FragmentPagerAdapter{
     @Override
     public CharSequence getPageTitle(int position) {
         if(position == 0){
-            return "Songs";
+            return mContext.getString(R.string.song);
         }else
-            return "Artist";
+            return mContext.getString(R.string.artist);
     }
 }

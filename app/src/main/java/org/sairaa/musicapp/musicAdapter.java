@@ -30,6 +30,7 @@ class musicAdapter extends ArrayAdapter<Music>{
         }
 
         Music currentSong = getItem(position);
+        // Song fragment if true else artist fragment
         if(currentSong.hasArtistFragment()){
             ImageView songImage = listItemView.findViewById(R.id.pic);
             songImage.setBackgroundResource(currentSong.getMusicResource());

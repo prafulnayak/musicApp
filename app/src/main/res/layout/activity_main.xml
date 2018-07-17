@@ -35,34 +35,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/zeroDp"
+            android:layout_height="@dimen/seventyDp"
             android:layout_weight="1"
             android:id="@+id/image_slide"/>
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/zeroDp"
+            android:layout_height="@dimen/sixtyDp"
             android:orientation="vertical"
             android:layout_weight="4">
             <TextView
                 android:id="@+id/text_slide"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="hello"/>
+                android:layout_height="@dimen/zeroDp"
+                android:layout_weight="2"
+                style="@style/Heading"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_height="@dimen/zeroDp"
+                android:layout_weight="4"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/zeroDp"
+                    android:layout_height="@dimen/fourtyDp"
                     android:layout_weight="1"
                     android:src="@drawable/previous"/>
                 <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/zeroDp"
+                    android:layout_height="@dimen/fourtyDp"
                     android:layout_weight="1">
                     <ImageView
                         android:layout_width="match_parent"
@@ -76,8 +76,8 @@
                         android:id="@+id/play_image"/>
                 </RelativeLayout>
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/zeroDp"
+                    android:layout_height="@dimen/fourtyDp"
                     android:layout_weight="1"
                     android:src="@drawable/next"/>
             </LinearLayout>

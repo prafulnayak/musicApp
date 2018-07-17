@@ -37,25 +37,16 @@ public class ArtistFragment extends Fragment {
         songsToDisplay.add(new Music(getString(R.string.yoyo),R.drawable.yoyo));
         songsToDisplay.add(new Music(getString(R.string.arjit),R.drawable.arjit));
 
-
-//        songsToDisplay.add(new Music("Sairat","hello hi45","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello h457i","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello h14i","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello hi4","Ena"));
-//        songsToDisplay.add(new Music("Sairat","hello hi","Ena"));
-
         musicAdapter mAdapter = new musicAdapter(getActivity(),songsToDisplay);
         GridView gridView = rootView.findViewById(R.id.gridview_song);
         gridView.setAdapter(mAdapter);
-        final ArrayList<Music> songsToPass = new ArrayList<Music>();
+        // On Artist fragment the artist name is passed to new Activity "ArtistDetails" on item click
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Music sMusic = songsToDisplay.get(position);
-
                 Intent intent = new Intent(getActivity(),ArtistDetails.class);
-                intent.putExtra("artist",sMusic.getArtist());
-                
+                intent.putExtra(getString(R.string.artist),sMusic.getArtist());
                 getActivity().startActivity(intent);
             }
         });

@@ -15,14 +15,8 @@ public class ArtistDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artist_details);
-        String artist = getIntent().getStringExtra("artist");
-
-//        String json = getIntent().getStringExtra("myjson");
-//        Gson gson = new Gson();
-//        Music ms = gson.fromJson(getIntent().getStringExtra("myjson"), Music.class);
-//        = (ArrayList<Music>) getIntent().getSerializableExtra("myjson");
-//        Gson gson = new Gson();
-//        final ArrayList<Music> songsToDisplay = gson.fromJson(getIntent().getStringExtra("myjson"));
+        String artist = getIntent().getStringExtra(getString(R.string.artist));
+        //Array list to all music
         final ArrayList<Music> songsToDisplay = new ArrayList<Music>();
 
         songsToDisplay.add(new Music(getString(R.string.soorma),getString(R.string.soorma_song1),getString(R.string.sukhwinder),R.drawable.play_circle,R.drawable.soorma));
@@ -36,7 +30,7 @@ public class ArtistDetails extends AppCompatActivity {
         songsToDisplay.add(new Music(getString(R.string.sonu_ke),getString(R.string.sonu_ke_song2),getString(R.string.arjit),R.drawable.play_circle,R.drawable.sonuk));
         songsToDisplay.add(new Music(getString(R.string.padman),getString(R.string.padman_song1),getString(R.string.arjit),R.drawable.play_circle,R.drawable.padman));
         songsToDisplay.add(new Music(getString(R.string.razzi),getString(R.string.razzi_song1),getString(R.string.arjit),R.drawable.play_circle,R.drawable.raazi));
-
+        //ArrayList to only having same name as the artist
         final ArrayList<Music> songsToPush = new ArrayList<Music>();
 
         for(int i =0; i<songsToDisplay.size();i++){
@@ -44,6 +38,7 @@ public class ArtistDetails extends AppCompatActivity {
                 songsToPush.add(songsToDisplay.get(i));
             }
         }
+        //musicDetailsAdapter for a listview containing single artist or album
         musicDetailsAdapter mAdapter = new musicDetailsAdapter(ArtistDetails.this,songsToPush);
         ListView listView = findViewById(R.id.list_item_songs);
         listView.setAdapter(mAdapter);
