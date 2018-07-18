@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-class musicDetailsAdapter extends ArrayAdapter<Music> {
+class MusicDetailsAdapter extends ArrayAdapter<Music> {
 
-    public musicDetailsAdapter(Activity context, ArrayList<Music> songsList) {
+    public MusicDetailsAdapter(Activity context, ArrayList<Music> songsList) {
         super(context,0,songsList);
 
     }

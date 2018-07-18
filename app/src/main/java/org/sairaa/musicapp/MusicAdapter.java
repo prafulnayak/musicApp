@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-class musicAdapter extends ArrayAdapter<Music>{
-    public musicAdapter(Activity context, ArrayList<Music> songsList) {
+class MusicAdapter extends ArrayAdapter<Music>{
+    public MusicAdapter(Activity context, ArrayList<Music> songsList) {
         super(context,0,songsList);
 
     }

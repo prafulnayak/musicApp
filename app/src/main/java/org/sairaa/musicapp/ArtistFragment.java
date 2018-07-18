@@ -2,7 +2,6 @@ package org.sairaa.musicapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -37,7 +34,7 @@ public class ArtistFragment extends Fragment {
         songsToDisplay.add(new Music(getString(R.string.yoyo),R.drawable.yoyo));
         songsToDisplay.add(new Music(getString(R.string.arjit),R.drawable.arjit));
 
-        musicAdapter mAdapter = new musicAdapter(getActivity(),songsToDisplay);
+        MusicAdapter mAdapter = new MusicAdapter(getActivity(),songsToDisplay);
         GridView gridView = rootView.findViewById(R.id.gridview_song);
         gridView.setAdapter(mAdapter);
         // On Artist fragment the artist name is passed to new Activity "ArtistDetails" on item click

@@ -1,5 +1,4 @@
 package org.sairaa.musicapp;
-
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,21 +10,14 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-
 import java.util.ArrayList;
-
 public class SongFragment extends Fragment {
-
     private TextView textSlide;
     private ImageView imageSlide, playImage, pauseImage;
     SlidingUpPanelLayout slidingPanel;
-
     public SongFragment(){
-
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,13 +38,11 @@ public class SongFragment extends Fragment {
         songsToDisplay.add(new Music(getString(R.string.sonu_ke),getString(R.string.sonu_ke_song2),getString(R.string.arjit),R.drawable.play_circle,R.drawable.sonuk));
         songsToDisplay.add(new Music(getString(R.string.padman),getString(R.string.padman_song1),getString(R.string.arjit),R.drawable.play_circle,R.drawable.padman));
         songsToDisplay.add(new Music(getString(R.string.razzi),getString(R.string.razzi_song1),getString(R.string.arjit),R.drawable.play_circle,R.drawable.raazi));
-
-        musicAdapter mAdapter = new musicAdapter(getActivity(),songsToDisplay);
+        MusicAdapter mAdapter = new MusicAdapter(getActivity(),songsToDisplay);
         GridView gridView = rootView.findViewById(R.id.gridview_song);
         gridView.setAdapter(mAdapter);
         //sliding panel
         slidingPanel = getActivity().findViewById(R.id.sliding_layout);
-
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -66,7 +56,6 @@ public class SongFragment extends Fragment {
                 slidingPanel.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
-
         return rootView;
     }
 }

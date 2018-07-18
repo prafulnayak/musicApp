@@ -1,11 +1,8 @@
 package org.sairaa.musicapp;
 
-import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
-
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -38,8 +35,8 @@ public class ArtistDetails extends AppCompatActivity {
                 songsToPush.add(songsToDisplay.get(i));
             }
         }
-        //musicDetailsAdapter for a listview containing single artist or album
-        musicDetailsAdapter mAdapter = new musicDetailsAdapter(ArtistDetails.this,songsToPush);
+        //MusicDetailsAdapter for a listview containing single artist or album
+        MusicDetailsAdapter mAdapter = new MusicDetailsAdapter(ArtistDetails.this,songsToPush);
         ListView listView = findViewById(R.id.list_item_songs);
         listView.setAdapter(mAdapter);
 
